@@ -1,0 +1,106 @@
+/* 容器布局 */
+.gas-container {
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;
+    background-color: var(--background-primary);
+}
+
+/* 头部元数据 */
+.gas-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--background-modifier-border);
+    margin-bottom: 15px;
+    font-size: 0.8em;
+    color: var(--text-muted);
+}
+
+.gas-meta {
+    margin-right: 15px;
+    background: var(--background-secondary);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* 系统提示词 */
+.gas-system-instruction {
+    background-color: var(--background-secondary);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    border-left: 3px solid var(--interactive-accent);
+}
+
+/* 聊天气泡布局 */
+.gas-msg-row {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.gas-msg-row.user {
+    justify-content: flex-end;
+}
+
+.gas-msg-row.model {
+    justify-content: flex-start;
+}
+
+.gas-msg-bubble {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.gas-msg-row.user .gas-msg-bubble {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+    border-bottom-right-radius: 2px;
+}
+
+/* 修复 User 气泡内的 Markdown 颜色 */
+.gas-msg-row.user .gas-msg-bubble p, 
+.gas-msg-row.user .gas-msg-bubble code {
+    color: var(--text-on-accent) !important;
+}
+
+.gas-msg-row.model .gas-msg-bubble {
+    background-color: var(--background-secondary);
+    border: 1px solid var(--background-modifier-border);
+    border-bottom-left-radius: 2px;
+}
+
+/* 角色标签 */
+.gas-role-label {
+    font-size: 0.7em;
+    margin-bottom: 4px;
+    opacity: 0.7;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* 思考过程样式 */
+.gas-thought-block {
+    margin-bottom: 8px;
+    border: 1px dashed var(--text-muted);
+    border-radius: 6px;
+    padding: 5px;
+    background-color: var(--background-primary);
+}
+
+.gas-thought-block summary {
+    cursor: pointer;
+    font-size: 0.8em;
+    color: var(--text-muted);
+    list-style: none; /* 某些主题可能需要这个 */
+}
+
+.gas-thought-content {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: var(--text-muted);
+    font-style: italic;
+    padding-left: 10px;
+    border-left: 2px solid var(--text-muted);
+}

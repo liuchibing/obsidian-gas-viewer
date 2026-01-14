@@ -1,0 +1,10 @@
+{
+	"id": "google-ai-studio-viewer",
+	"name": "Google AI Studio Viewer",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "View Google AI Studio conversation logs (.gas files) as a chat interface.",
+	"author": "YourName",
+	"authorUrl": "https://github.com/yourname",
+	"isDesktopOnly": false
+}
