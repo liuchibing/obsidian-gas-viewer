@@ -30,6 +30,7 @@
     margin-bottom: 20px;
     font-size: 0.9em;
     border-left: 3px solid var(--interactive-accent);
+    position: relative;
 }
 
 /* 聊天气泡布局 */
@@ -51,6 +52,34 @@
     padding: 10px 15px;
     border-radius: 10px;
     position: relative;
+}
+
+/* 复制图标按钮，位于气泡右上角 */
+.gas-copy-btn {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-muted);
+    z-index: 4;
+}
+.gas-copy-btn svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+}
+.gas-copy-btn:hover {
+    background: var(--background-modifier-hover);
+    color: var(--interactive-accent);
 }
 
 .gas-msg-row.user .gas-msg-bubble {
