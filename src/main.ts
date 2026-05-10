@@ -49,6 +49,7 @@ const VIEW_TYPE_GAS = "gas-view";
 
 class GASView extends TextFileView {
 	gasData: GASData | null = null;
+	rawData: string = "";
 
 	constructor(leaf: WorkspaceLeaf) {
 		super(leaf);
@@ -68,11 +69,12 @@ class GASView extends TextFileView {
 
 	// 当 Obsidian 保存文件时会调用此方法获取要写入的文本
 	getViewData(): string {
-		return JSON.stringify(this.gasData, null, 2);
+		return this.rawData;
 	}
 
 	// 核心渲染逻辑：从文本加载数据
 	setViewData(data: string, clear: boolean) {
+		this.rawData = data;
 		try {
 			this.gasData = JSON.parse(data) as GASData;
 		} catch (e) {
@@ -84,6 +86,7 @@ class GASView extends TextFileView {
 
 	clear() {
 		this.gasData = null;
+		this.rawData = "";
 		this.contentEl.empty();
 	}
 
